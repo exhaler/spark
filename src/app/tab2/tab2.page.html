@@ -1,0 +1,123 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="ion-text-center ion-padding"> Discover </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-grid class="ion-no-padding">
+          <ion-card
+            *ngFor="let card of discoverCardsOdd"
+            class="card-details"
+            [style.background-image]="'url(' + card.image + ')'"
+          >
+            <ion-card-content>
+              <ion-item lines="none" class="ion-no-padding">
+                <ion-label>
+                  <h1>{{card.firstName}}</h1>
+                  <h1>{{card.lastName}}</h1>
+                </ion-label>
+                <ion-icon name="chatbubbles" color="secondary" slot="end"></ion-icon>
+              </ion-item>
+
+              <ion-item lines="none" class="ion-no-padding">
+                <ion-icon name="calendar-clear-outline" slot="start" color="light" class="calendar-icon"></ion-icon>
+                <ion-label>
+                  <p class="age">{{card.age}} years old</p>
+                </ion-label>
+                <ion-icon name="heart" color="tertiary" slot="end"></ion-icon>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+        </ion-grid>
+      </ion-col>
+
+      <ion-col size="6">
+        <div class="balance">
+          <h3>Your daily balance</h3>
+          <div class="ion-text-center daily-balance">
+            <ion-icon name="heart" color="tertiary"></ion-icon>
+            <span>100</span>
+            <ion-icon name="chatbubbles" color="secondary"></ion-icon>
+            <span>5</span>
+          </div>
+          <p class="unlimited-likes">Wish for unlimited likes and messages?</p>
+          <ion-button expand="block" shape="round"> Upgrade to Premium</ion-button>
+        </div>
+
+        <ion-card
+          *ngFor="let card of discoverCardsEven"
+          class="card-details"
+          [style.background-image]="'url(' + card.image + ')'"
+        >
+          <ion-card-content>
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-label>
+                <h1>{{card.firstName}}</h1>
+                <h1>{{card.lastName}}</h1>
+              </ion-label>
+              <ion-icon name="chatbubbles" color="secondary" slot="end"></ion-icon>
+            </ion-item>
+
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-icon name="calendar-clear-outline" slot="start" color="light" class="calendar-icon"></ion-icon>
+              <ion-label>
+                <p class="age">{{card.age}} years old</p>
+              </ion-label>
+              <ion-icon name="heart" color="tertiary" slot="end"></ion-icon>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let card of discoverCards; let index = index">
+        <ng-container *ngIf="index === 1">
+          <div class="balance">
+            <h3>Your daily balance</h3>
+            <div class="ion-text-center daily-balance">
+              <ion-icon name="heart" color="tertiary"></ion-icon>
+              <span>100</span>
+              <ion-icon name="chatbubbles" color="secondary"></ion-icon>
+              <span>5</span>
+            </div>
+            <p class="unlimited-likes">Wish for unlimited likes and messages?</p>
+            <ion-button expand="block" shape="round"> Upgrade to Premium</ion-button>
+          </div>
+        </ng-container>
+
+        <ion-card class="card-details" [style.background-image]="'url(' + card.image + ')'">
+          <ion-card-content>
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-label>
+                <h1>{{card.firstName}}</h1>
+                <h1>{{card.lastName}}</h1>
+              </ion-label>
+              <ion-icon name="chatbubbles" color="secondary" slot="end"></ion-icon>
+            </ion-item>
+
+            <ion-item lines="none" class="ion-no-padding">
+              <ion-icon name="calendar-clear-outline" slot="start" color="light" class="calendar-icon"></ion-icon>
+              <ion-label>
+                <p class="age">{{card.age}} years old</p>
+              </ion-label>
+              <ion-icon name="heart" color="tertiary" slot="end"></ion-icon>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="wifi" color="success"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

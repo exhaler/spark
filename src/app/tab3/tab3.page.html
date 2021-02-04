@@ -1,0 +1,35 @@
+<ion-content>
+  <h2 class="ion-text-center ion-padding matches-title">Matches <ion-badge color="tertiary">1</ion-badge></h2>
+  <div class="matches-slides">
+    <ion-slides [options]="matchesSlideOptions">
+      <ion-slide *ngFor="let match of matches">
+        <div class="slide">
+          <ion-icon name="heart" *ngIf="match.liked" color="tertiary"></ion-icon>
+          <ion-icon name="ellipse" *ngIf="match.online" color="primary"></ion-icon>
+          <div class="image" [style.background-image]="'url(' + match.image + ')'"></div>
+          <p *ngIf="!match.liked">{{ match.firstName }}</p>
+          <p *ngIf="match.liked"><ion-text color="tertiary">Likes</ion-text></p>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <div class="messages">
+    <h2>Messages <ion-badge color="secondary">2</ion-badge></h2>
+
+    <ion-item lines="none" *ngFor="let message of messages">
+      <ion-avatar slot="start">
+        <img [src]="message.image" />
+        <ion-icon name="ellipse" class="online" *ngIf="message.online" color="primary"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h4>{{ message.firstName }} {{ message.lastName }}</h4>
+        <p>
+          <ion-icon class="replied" name="arrow-undo-sharp" *ngIf="message.reply"></ion-icon>
+          {{ message.latestMessage }}
+        </p>
+      </ion-label>
+      <p slot="end" class="message-time">{{ message.messageTime }}</p>
+    </ion-item>
+  </div>
+</ion-content>
