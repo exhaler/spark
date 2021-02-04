@@ -1,4 +1,4 @@
-# How to setup on you local machine
+# How to setup on your local machine
 
 - Clone git
 - Run `npm i`
