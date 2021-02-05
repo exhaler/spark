@@ -1,0 +1,19 @@
+<ion-card *ngFor="let card of discoverCards" class="card-details" [style.background-image]="'url(' + card.image + ')'">
+  <ion-card-content>
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-label>
+        <h1>{{ card.firstName }}</h1>
+        <h1>{{ card.lastName }}</h1>
+      </ion-label>
+      <ion-icon name="chatbubbles" color="secondary" slot="end"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="none" class="ion-no-padding">
+      <ion-icon name="calendar-clear-outline" slot="start" color="light" class="calendar-icon"></ion-icon>
+      <ion-label>
+        <p class="age">{{ card.age }} years old</p>
+      </ion-label>
+      <ion-icon name="heart" color="tertiary" slot="end"></ion-icon>
+    </ion-item>
+  </ion-card-content>
+</ion-card>

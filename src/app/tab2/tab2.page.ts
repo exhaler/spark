@@ -10,14 +10,12 @@ import { DiscoverCards, UserBalance } from '../shared/models';
 export class Tab2Page implements OnInit {
   discoverCardsOdd: DiscoverCards[];
   discoverCardsEven: DiscoverCards[];
-  discoverCards: DiscoverCards[];
   userBalance: UserBalance;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.http.get('./assets/json/discover.json').subscribe((res: any) => {
-      this.discoverCards = res;
       this.discoverCardsOdd = res.filter((e, index) => index % 2 === 0);
       this.discoverCardsEven = res.filter((e, index) => index % 2 !== 0);
     });

@@ -44,42 +44,27 @@ ion-title {
   }
 }
 
-.card-details {
-  position: relative;
-  height: 400px;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  margin: 0 0 10px 0;
-  padding: 0;
-
-  ion-card-content {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
-    padding: 5px 10px;
-
-    ion-item {
-      --inner-padding-start: 0;
-      --inner-padding-end: 0;
-      --background: none;
-      h1,
-      p {
-        color: #fff;
-      }
-
-      .calendar-icon {
-        margin: 0 10px 0 0;
-      }
-    }
-  }
-}
-
 ion-fab-button {
   --background: #fff;
 
   ion-icon {
     color: #000;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .small-mobile-hidden {
+    display: block;
+  }
+  .large-mobile-hidden {
+    display: none;
+  }
+}
+@media screen and (max-width: 340px) {
+  .small-mobile-hidden {
+    display: none;
+  }
+  .large-mobile-hidden {
+    display: block;
   }
 }
